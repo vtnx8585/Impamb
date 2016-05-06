@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="10.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="TC_UNIDAD_ADMINISTRATIVA">
+          <Key>
+            <PropertyRef Name="CODIGO_UNIDAD_ADMINISTRATIVA" />
+          </Key>
+          <Property Name="CODIGO_UNIDAD_ADMINISTRATIVA" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="USUARIO_INGRESO" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="FECHA_INGRESO" Type="date" Nullable="false" />
+          <Property Name="USUARIO_ACTUALIZACION" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="FECHA_ACTUALIZACION" Type="date" Nullable="false" />
+          <Property Name="PROGRAMA" Type="varchar2" MaxLength="2" />
+          <Property Name="ACTIVIDAD" Type="varchar2" MaxLength="3" />
+          <Property Name="PERIODO" Type="number" Precision="4" Scale="0" />
+          <Property Name="TIPO" Type="varchar2" MaxLength="1" />
+          <Property Name="CODIGO_DEPARTAMENTO" Type="number" Precision="6" Scale="0" />
+          <Property Name="CODIGO_MUNICIPIO" Type="number" Precision="6" Scale="0" />
+          <Property Name="PERTENECE" Type="varchar2" MaxLength="1" />
+          <Property Name="HPERTENECE" Type="varchar2" MaxLength="1" />
+          <Property Name="ESTATUS" Type="varchar2" MaxLength="1" />
+          <Property Name="REGION" Type="number" Precision="6" Scale="0" />
+        </EntityType>
+        <EntityType Name="TC_INSTRUMENTOS">
+          <Key>
+            <PropertyRef Name="ESTATUS" />
+          </Key>
+          <Property Name="ESTATUS" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="INICIALES" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="USUARIO_INGRESO" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="FECHA_INGRESO" Type="date" Nullable="false" />
+          <Property Name="USUARIO_ACTUALIZACION" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="FECHA_ACTUALIZACION" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TM_ESTUDIOS_IMPAMB">
+          <Key>
+            <PropertyRef Name="PERIODO" />
+            <PropertyRef Name="NUMERO_ESTUDIO" />
+          </Key>
+          <Property Name="PERIODO" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="NUMERO_ESTUDIO" Type="varchar2" MaxLength="15" Nullable="false" />
+          <Property Name="NOMBRE_PROYECTO" Type="varchar2" MaxLength="254" Nullable="false" />
+          <Property Name="REPRESENTANTE_LEGAL" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="DIRECCION_PROYECTO" Type="varchar2" MaxLength="1000" Nullable="false" />
+          <Property Name="TELEFONO" Type="varchar2" MaxLength="40" />
+          <Property Name="FECHA_CAPTURA" Type="date" Nullable="false" />
+          <Property Name="NOMBRE_EMPRESA" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="OBJETIVO_EMPRESA" Type="varchar2" MaxLength="254" Nullable="false" />
+          <Property Name="NOMBRE_CONSULTOR" Type="varchar2" MaxLength="100" />
+          <Property Name="NIT_CONSULTOR" Type="varchar2" MaxLength="12" />
+          <Property Name="ESTATUS_ESTUDIO" Type="varchar2" MaxLength="1" />
+          <Property Name="ASESOR_DELEGACION" Type="varchar2" MaxLength="100" />
+          <Property Name="FECHA_RESOLUCION" Type="date" />
+          <Property Name="NUMERO_RESOLUCION" Type="varchar2" MaxLength="50" />
+          <Property Name="ESTATUS_RESOLUCION" Type="varchar2" MaxLength="1" />
+          <Property Name="FECHA_NOTIFICACION" Type="date" />
+          <Property Name="NO_FOLIOS" Type="number" Precision="10" Scale="0" />
+          <Property Name="NO_ESTANTERIA" Type="number" Precision="10" Scale="0" />
+          <Property Name="NO_FILA" Type="number" Precision="10" Scale="0" />
+          <Property Name="ESTATUS" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="USUARIO_INGRESO" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="FECHA_INGRESO" Type="date" Nullable="false" />
+          <Property Name="USUARIO_ACTUALIZACION" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="FECHA_ACTUALIZACION" Type="date" Nullable="false" />
+          <Property Name="FECHA_ASESOR" Type="date" />
+          <Property Name="NUMERO_DICTAMEN" Type="varchar2" MaxLength="50" />
+          <Property Name="FECHA_DICTAMEN" Type="date" />
+          <Property Name="E_MAIL" Type="varchar2" MaxLength="50" />
+          <Property Name="SOLICITA_AMPLIACION" Type="varchar2" MaxLength="1" />
+          <Property Name="DIRECCION_NOTIFICACION" Type="varchar2" MaxLength="254" />
+          <Property Name="DEPARTAMENTO" Type="varchar2" MaxLength="100" />
+          <Property Name="UBICACION_GEOGRAFICA" Type="number" Precision="6" Scale="0" />
+          <Property Name="CODIGO_ENTIDAD" Type="number" Precision="2" Scale="0" />
+          <Property Name="TIPO" Type="varchar2" MaxLength="1" />
+          <Property Name="OBSERVACIONES" Type="varchar2" MaxLength="1000" />
+          <Property Name="MONTO_INVERSION" Type="number" Precision="14" Scale="2" />
+          <Property Name="NIT_EMPRESA" Type="varchar2" MaxLength="12" />
+          <Property Name="NO_CEDULA" Type="varchar2" MaxLength="20" />
+          <Property Name="FECHA_AVISO_PUBLICO" Type="date" />
+          <Property Name="FECHA_VAVISO_PUBLICO" Type="date" />
+          <Property Name="NUMERO_EMPLEOS" Type="number" Precision="5" Scale="0" />
+          <Property Name="SECTOR" Type="varchar2" MaxLength="1" />
+          <Property Name="LONGITUD_UTM" Type="number" Precision="12" Scale="2" />
+          <Property Name="LATITUD_UTM" Type="number" Precision="12" Scale="2" />
+          <Property Name="LONGITUD_GCG" Type="number" Precision="3" Scale="0" />
+          <Property Name="LONGITUD_MCG" Type="number" Precision="2" Scale="0" />
+          <Property Name="LONGITUD_SCG" Type="number" Precision="5" Scale="2" />
+          <Property Name="LATITUD_GCG" Type="number" Precision="3" Scale="0" />
+          <Property Name="LATITUD_MCG" Type="number" Precision="2" Scale="0" />
+          <Property Name="LATITUD_SCG" Type="number" Precision="5" Scale="2" />
+          <Property Name="LOCALIZACION_X_GC" Type="char" MaxLength="1" />
+          <Property Name="LOCALIZACION_Y_GC" Type="char" MaxLength="1" />
+          <Property Name="ESTATUS_ESTUDIO_RESOLUCION" Type="varchar2" MaxLength="1" />
+          <Property Name="FUENTE" Type="varchar2" MaxLength="1" />
+          <Property Name="CTAXATIVA" Type="varchar2" MaxLength="2" />
+          <Property Name="FECHA_RECIBIDO_NOTIFICACION" Type="date" />
+          <Property Name="CODIGO_MUNICIPIO" Type="number" Precision="6" Scale="0" />
+          <Property Name="CONCLUSION" Type="varchar2" MaxLength="2500" />
+          <Property Name="NUMERO_LICENCIA" Type="number" Precision="10" Scale="0" />
+          <Property Name="VISTA_PUBLICO" Type="varchar2" MaxLength="100" />
+          <Property Name="RECTRA" Type="varchar2" MaxLength="3" />
+          <Property Name="RESUELTO" Type="varchar2" MaxLength="2500" />
+          <Property Name="DPI" Type="varchar2" MaxLength="15" />
+          <Property Name="INVERSION" Type="varchar2" MaxLength="20" />
+          <Property Name="COD_DELEG_INGRESO" Type="number" Precision="6" Scale="0" />
+          <Property Name="CAUSALNOAPROBATORIO" Type="number" Precision="2" Scale="0" />
+          <Property Name="COD_DEPARTAMENTO" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="TC_UNIDAD_ADMINISTRATIVA" EntityType="Self.TC_UNIDAD_ADMINISTRATIVA" Schema="ALMACEN" store:Type="Tables" />
+          <EntitySet Name="TC_INSTRUMENTOS" EntityType="Self.TC_INSTRUMENTOS" Schema="GESTION" store:Type="Tables" />
+          <EntitySet Name="TM_ESTUDIOS_IMPAMB" EntityType="Self.TM_ESTUDIOS_IMPAMB" Schema="GESTION" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="TM_ESTUDIOS_IMPAMB">
+          <Key>
+            <PropertyRef Name="PERIODO" />
+            <PropertyRef Name="NUMERO_ESTUDIO" />
+          </Key>
+          <Property Name="PERIODO" Type="Int16" Nullable="false" />
+          <Property Name="NUMERO_ESTUDIO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMBRE_PROYECTO" Type="String" MaxLength="254" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="REPRESENTANTE_LEGAL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIRECCION_PROYECTO" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_CAPTURA" Type="DateTime" Nullable="false" />
+          <Property Name="NOMBRE_EMPRESA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OBJETIVO_EMPRESA" Type="String" MaxLength="254" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMBRE_CONSULTOR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NIT_CONSULTOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="ESTATUS_ESTUDIO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ASESOR_DELEGACION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_RESOLUCION" Type="DateTime" />
+          <Property Name="NUMERO_RESOLUCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ESTATUS_RESOLUCION" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_NOTIFICACION" Type="DateTime" />
+          <Property Name="NO_FOLIOS" Type="Int32" />
+          <Property Name="NO_ESTANTERIA" Type="Int32" />
+          <Property Name="NO_FILA" Type="Int32" />
+          <Property Name="ESTATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USUARIO_INGRESO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_INGRESO" Type="DateTime" Nullable="false" />
+          <Property Name="USUARIO_ACTUALIZACION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_ACTUALIZACION" Type="DateTime" Nullable="false" />
+          <Property Name="FECHA_ASESOR" Type="DateTime" />
+          <Property Name="NUMERO_DICTAMEN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_DICTAMEN" Type="DateTime" />
+          <Property Name="E_MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SOLICITA_AMPLIACION" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DIRECCION_NOTIFICACION" Type="String" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Name="DEPARTAMENTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UBICACION_GEOGRAFICA" Type="Int32" />
+          <Property Name="CODIGO_ENTIDAD" Type="Int16" />
+          <Property Name="TIPO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="OBSERVACIONES" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="MONTO_INVERSION" Type="Decimal" Precision="14" Scale="2" />
+          <Property Name="NIT_EMPRESA" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="NO_CEDULA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_AVISO_PUBLICO" Type="DateTime" />
+          <Property Name="FECHA_VAVISO_PUBLICO" Type="DateTime" />
+          <Property Name="NUMERO_EMPLEOS" Type="Int16" />
+          <Property Name="SECTOR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="LONGITUD_UTM" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="LATITUD_UTM" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="LONGITUD_GCG" Type="Int16" />
+          <Property Name="LONGITUD_MCG" Type="Int16" />
+          <Property Name="LONGITUD_SCG" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="LATITUD_GCG" Type="Int16" />
+          <Property Name="LATITUD_MCG" Type="Int16" />
+          <Property Name="LATITUD_SCG" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="LOCALIZACION_X_GC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="LOCALIZACION_Y_GC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ESTATUS_ESTUDIO_RESOLUCION" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FUENTE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CTAXATIVA" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_RECIBIDO_NOTIFICACION" Type="DateTime" />
+          <Property Name="CODIGO_MUNICIPIO" Type="Int32" />
+          <Property Name="CONCLUSION" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+          <Property Name="NUMERO_LICENCIA" Type="Int32" />
+          <Property Name="VISTA_PUBLICO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RECTRA" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="RESUELTO" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+          <Property Name="DPI" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="INVERSION" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="COD_DELEG_INGRESO" Type="Int32" />
+          <Property Name="CAUSALNOAPROBATORIO" Type="Int16" />
+          <Property Name="COD_DEPARTAMENTO" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="EstudiosImpactoAmbiental" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TM_ESTUDIOS_IMPAMB" EntityType="Self.TM_ESTUDIOS_IMPAMB" />
+          <EntitySet Name="TC_UNIDAD_ADMINISTRATIVA" EntityType="Model.TC_UNIDAD_ADMINISTRATIVA" />
+          <EntitySet Name="TC_INSTRUMENTOS" EntityType="Model.TC_INSTRUMENTOS" />
+        </EntityContainer>
+        <EntityType Name="TC_UNIDAD_ADMINISTRATIVA">
+          <Key>
+            <PropertyRef Name="CODIGO_UNIDAD_ADMINISTRATIVA" />
+          </Key>
+          <Property Name="CODIGO_UNIDAD_ADMINISTRATIVA" Type="Int32" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="USUARIO_INGRESO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_INGRESO" Type="DateTime" Nullable="false" />
+          <Property Name="USUARIO_ACTUALIZACION" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_ACTUALIZACION" Type="DateTime" Nullable="false" />
+          <Property Name="PROGRAMA" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ACTIVIDAD" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="PERIODO" Type="Int16" />
+          <Property Name="TIPO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CODIGO_DEPARTAMENTO" Type="Int32" />
+          <Property Name="CODIGO_MUNICIPIO" Type="Int32" />
+          <Property Name="PERTENECE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="HPERTENECE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ESTATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="REGION" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TC_INSTRUMENTOS">
+          <Key>
+            <PropertyRef Name="ESTATUS" />
+          </Key>
+          <Property Name="ESTATUS" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="INICIALES" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="USUARIO_INGRESO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_INGRESO" Type="DateTime" Nullable="false" />
+          <Property Name="USUARIO_ACTUALIZACION" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_ACTUALIZACION" Type="DateTime" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="EstudiosImpactoAmbiental">
+          <EntitySetMapping Name="TM_ESTUDIOS_IMPAMB">
+            <EntityTypeMapping TypeName="Model.TM_ESTUDIOS_IMPAMB">
+              <MappingFragment StoreEntitySet="TM_ESTUDIOS_IMPAMB">
+                <ScalarProperty Name="PERIODO" ColumnName="PERIODO" />
+                <ScalarProperty Name="NUMERO_ESTUDIO" ColumnName="NUMERO_ESTUDIO" />
+                <ScalarProperty Name="NOMBRE_PROYECTO" ColumnName="NOMBRE_PROYECTO" />
+                <ScalarProperty Name="REPRESENTANTE_LEGAL" ColumnName="REPRESENTANTE_LEGAL" />
+                <ScalarProperty Name="DIRECCION_PROYECTO" ColumnName="DIRECCION_PROYECTO" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="FECHA_CAPTURA" ColumnName="FECHA_CAPTURA" />
+                <ScalarProperty Name="NOMBRE_EMPRESA" ColumnName="NOMBRE_EMPRESA" />
+                <ScalarProperty Name="OBJETIVO_EMPRESA" ColumnName="OBJETIVO_EMPRESA" />
+                <ScalarProperty Name="NOMBRE_CONSULTOR" ColumnName="NOMBRE_CONSULTOR" />
+                <ScalarProperty Name="NIT_CONSULTOR" ColumnName="NIT_CONSULTOR" />
+                <ScalarProperty Name="ESTATUS_ESTUDIO" ColumnName="ESTATUS_ESTUDIO" />
+                <ScalarProperty Name="ASESOR_DELEGACION" ColumnName="ASESOR_DELEGACION" />
+                <ScalarProperty Name="FECHA_RESOLUCION" ColumnName="FECHA_RESOLUCION" />
+                <ScalarProperty Name="NUMERO_RESOLUCION" ColumnName="NUMERO_RESOLUCION" />
+                <ScalarProperty Name="ESTATUS_RESOLUCION" ColumnName="ESTATUS_RESOLUCION" />
+                <ScalarProperty Name="FECHA_NOTIFICACION" ColumnName="FECHA_NOTIFICACION" />
+                <ScalarProperty Name="NO_FOLIOS" ColumnName="NO_FOLIOS" />
+                <ScalarProperty Name="NO_ESTANTERIA" ColumnName="NO_ESTANTERIA" />
+                <ScalarProperty Name="NO_FILA" ColumnName="NO_FILA" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+                <ScalarProperty Name="USUARIO_INGRESO" ColumnName="USUARIO_INGRESO" />
+                <ScalarProperty Name="FECHA_INGRESO" ColumnName="FECHA_INGRESO" />
+                <ScalarProperty Name="USUARIO_ACTUALIZACION" ColumnName="USUARIO_ACTUALIZACION" />
+                <ScalarProperty Name="FECHA_ACTUALIZACION" ColumnName="FECHA_ACTUALIZACION" />
+                <ScalarProperty Name="FECHA_ASESOR" ColumnName="FECHA_ASESOR" />
+                <ScalarProperty Name="NUMERO_DICTAMEN" ColumnName="NUMERO_DICTAMEN" />
+                <ScalarProperty Name="FECHA_DICTAMEN" ColumnName="FECHA_DICTAMEN" />
+                <ScalarProperty Name="E_MAIL" ColumnName="E_MAIL" />
+                <ScalarProperty Name="SOLICITA_AMPLIACION" ColumnName="SOLICITA_AMPLIACION" />
+                <ScalarProperty Name="DIRECCION_NOTIFICACION" ColumnName="DIRECCION_NOTIFICACION" />
+                <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
+                <ScalarProperty Name="UBICACION_GEOGRAFICA" ColumnName="UBICACION_GEOGRAFICA" />
+                <ScalarProperty Name="CODIGO_ENTIDAD" ColumnName="CODIGO_ENTIDAD" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+                <ScalarProperty Name="MONTO_INVERSION" ColumnName="MONTO_INVERSION" />
+                <ScalarProperty Name="NIT_EMPRESA" ColumnName="NIT_EMPRESA" />
+                <ScalarProperty Name="NO_CEDULA" ColumnName="NO_CEDULA" />
+                <ScalarProperty Name="FECHA_AVISO_PUBLICO" ColumnName="FECHA_AVISO_PUBLICO" />
+                <ScalarProperty Name="FECHA_VAVISO_PUBLICO" ColumnName="FECHA_VAVISO_PUBLICO" />
+                <ScalarProperty Name="NUMERO_EMPLEOS" ColumnName="NUMERO_EMPLEOS" />
+                <ScalarProperty Name="SECTOR" ColumnName="SECTOR" />
+                <ScalarProperty Name="LONGITUD_UTM" ColumnName="LONGITUD_UTM" />
+                <ScalarProperty Name="LATITUD_UTM" ColumnName="LATITUD_UTM" />
+                <ScalarProperty Name="LONGITUD_GCG" ColumnName="LONGITUD_GCG" />
+                <ScalarProperty Name="LONGITUD_MCG" ColumnName="LONGITUD_MCG" />
+                <ScalarProperty Name="LONGITUD_SCG" ColumnName="LONGITUD_SCG" />
+                <ScalarProperty Name="LATITUD_GCG" ColumnName="LATITUD_GCG" />
+                <ScalarProperty Name="LATITUD_MCG" ColumnName="LATITUD_MCG" />
+                <ScalarProperty Name="LATITUD_SCG" ColumnName="LATITUD_SCG" />
+                <ScalarProperty Name="LOCALIZACION_X_GC" ColumnName="LOCALIZACION_X_GC" />
+                <ScalarProperty Name="LOCALIZACION_Y_GC" ColumnName="LOCALIZACION_Y_GC" />
+                <ScalarProperty Name="ESTATUS_ESTUDIO_RESOLUCION" ColumnName="ESTATUS_ESTUDIO_RESOLUCION" />
+                <ScalarProperty Name="FUENTE" ColumnName="FUENTE" />
+                <ScalarProperty Name="CTAXATIVA" ColumnName="CTAXATIVA" />
+                <ScalarProperty Name="FECHA_RECIBIDO_NOTIFICACION" ColumnName="FECHA_RECIBIDO_NOTIFICACION" />
+                <ScalarProperty Name="CODIGO_MUNICIPIO" ColumnName="CODIGO_MUNICIPIO" />
+                <ScalarProperty Name="CONCLUSION" ColumnName="CONCLUSION" />
+                <ScalarProperty Name="NUMERO_LICENCIA" ColumnName="NUMERO_LICENCIA" />
+                <ScalarProperty Name="VISTA_PUBLICO" ColumnName="VISTA_PUBLICO" />
+                <ScalarProperty Name="RECTRA" ColumnName="RECTRA" />
+                <ScalarProperty Name="RESUELTO" ColumnName="RESUELTO" />
+                <ScalarProperty Name="DPI" ColumnName="DPI" />
+                <ScalarProperty Name="INVERSION" ColumnName="INVERSION" />
+                <ScalarProperty Name="COD_DELEG_INGRESO" ColumnName="COD_DELEG_INGRESO" />
+                <ScalarProperty Name="CAUSALNOAPROBATORIO" ColumnName="CAUSALNOAPROBATORIO" />
+                <ScalarProperty Name="COD_DEPARTAMENTO" ColumnName="COD_DEPARTAMENTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TC_UNIDAD_ADMINISTRATIVA">
+            <EntityTypeMapping TypeName="Model.TC_UNIDAD_ADMINISTRATIVA">
+              <MappingFragment StoreEntitySet="TC_UNIDAD_ADMINISTRATIVA">
+                <ScalarProperty Name="REGION" ColumnName="REGION" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+                <ScalarProperty Name="HPERTENECE" ColumnName="HPERTENECE" />
+                <ScalarProperty Name="PERTENECE" ColumnName="PERTENECE" />
+                <ScalarProperty Name="CODIGO_MUNICIPIO" ColumnName="CODIGO_MUNICIPIO" />
+                <ScalarProperty Name="CODIGO_DEPARTAMENTO" ColumnName="CODIGO_DEPARTAMENTO" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="PERIODO" ColumnName="PERIODO" />
+                <ScalarProperty Name="ACTIVIDAD" ColumnName="ACTIVIDAD" />
+                <ScalarProperty Name="PROGRAMA" ColumnName="PROGRAMA" />
+                <ScalarProperty Name="FECHA_ACTUALIZACION" ColumnName="FECHA_ACTUALIZACION" />
+                <ScalarProperty Name="USUARIO_ACTUALIZACION" ColumnName="USUARIO_ACTUALIZACION" />
+                <ScalarProperty Name="FECHA_INGRESO" ColumnName="FECHA_INGRESO" />
+                <ScalarProperty Name="USUARIO_INGRESO" ColumnName="USUARIO_INGRESO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="CODIGO_UNIDAD_ADMINISTRATIVA" ColumnName="CODIGO_UNIDAD_ADMINISTRATIVA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TC_INSTRUMENTOS">
+            <EntityTypeMapping TypeName="Model.TC_INSTRUMENTOS">
+              <MappingFragment StoreEntitySet="TC_INSTRUMENTOS">
+                <ScalarProperty Name="FECHA_ACTUALIZACION" ColumnName="FECHA_ACTUALIZACION" />
+                <ScalarProperty Name="USUARIO_ACTUALIZACION" ColumnName="USUARIO_ACTUALIZACION" />
+                <ScalarProperty Name="FECHA_INGRESO" ColumnName="FECHA_INGRESO" />
+                <ScalarProperty Name="USUARIO_INGRESO" ColumnName="USUARIO_INGRESO" />
+                <ScalarProperty Name="INICIALES" ColumnName="INICIALES" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
